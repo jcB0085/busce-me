@@ -1,2 +1,1 @@
-# busce-me
-Personal project following a course 'The Complete Web Developer in 2018'
+# Placeholder for a README.md
