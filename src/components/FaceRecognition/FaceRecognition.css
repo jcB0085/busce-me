@@ -1,6 +1,6 @@
 .box-you {
     position: absolute;
-    box-shadow: inset 0 0 0 3px #ff03ea;
+    /* box-shadow: inset 0 0 0 3px #ff03ea; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

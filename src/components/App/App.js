@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import Particles from 'react-particles-js';
-import Navigation from './components/Navigation/Navigation';
-import Logo from './components/Logo/Logo';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Rank from './components/Rank/Rank';
-import FaceRecognition from './components/FaceRecognition/FaceRecognition';
-import SignIn from './components/SignIn/SignIn';
-import Register from './components/Register/Register';
-import ParticlesConf from './components/Configs/ParticlesConf';
+import Navigation from '../Navigation/Navigation';
+import Logo from '../Logo/Logo';
+import ImageLinkForm from '../ImageLinkForm/ImageLinkForm';
+import Rank from '../Rank/Rank';
+import FaceRecognition from '../FaceRecognition/FaceRecognition';
+import SignIn from '../SignIn/SignIn';
+import Register from '../Register/Register';
+import ParticlesConf from '../Configs/ParticlesConf';
 import './App.css';
 
 const initialState = {
@@ -93,7 +93,7 @@ class App extends Component {
             .then(count => {
               this.setState(Object.assign(this.state.user, {entries: count}));
             })
-            .catch(console.log('ERROR'));
+            .catch(err => console.log('There was an error Buscemizing...'));
         }
         this.boxFaces(this.calculateFaceLocation(res));
       })

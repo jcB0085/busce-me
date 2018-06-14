@@ -1,4 +1,8 @@
 .Tilt {
-    background: linear-gradient(89deg, #04C8DE 0%, #FF5EDF 100%)
+    background: transparent; /* rgb(15, 160, 196);
+    /* linear-gradient(89deg, #04C8DE 0%, #FF5EDF 100%) */
+}
 
+.shadowed {
+    box-shadow: inset 0.3em 0.3em 0.9em black;
 }

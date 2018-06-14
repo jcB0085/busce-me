@@ -1,4 +1,5 @@
 import React from 'react';
+import photo1 from './1.png';
 
 const FaceBox = ({topRow,rightCol, bottomRow, leftCol}) => {
     return (
@@ -8,6 +9,7 @@ const FaceBox = ({topRow,rightCol, bottomRow, leftCol}) => {
             bottom: bottomRow, 
             left: leftCol
             }}>
+            <img style={{ overflow: 'hidden', height: '100%' }} alt='buscemonster' src={photo1}/>
         </div>
     );
 }
