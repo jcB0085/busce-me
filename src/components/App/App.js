@@ -10,6 +10,8 @@ import Register from '../Register/Register';
 import ParticlesConf from '../Configs/ParticlesConf';
 import './App.css';
 
+const backend = 'https://vast-sea-98475.herokuapp.com/';
+
 const initialState = {
   input: '',
   imageUrl: '',
@@ -29,6 +31,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = initialState;
+    this.backend = backend;
   }
 
   // componentDidMount() {
@@ -72,7 +75,7 @@ class App extends Component {
   };
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch(`http://localhost:5000/imageurl`, {
+    fetch(`${this.backend}imageurl`, {
       method: 'post',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify({
@@ -82,7 +85,7 @@ class App extends Component {
       .then(res => res.json())
       .then(res => {
         if (res) {
-          fetch(`http://localhost:5000/profiles/${this.state.user.id}`, {
+          fetch(`${this.backend}profiles/${this.state.user.id}`, {
             method: 'put',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({
@@ -132,11 +135,16 @@ class App extends Component {
             <FaceRecognition box={box} imageUrl={imageUrl} />
           </div>
         ) : route === 'signin' ? (
-          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+          <SignIn
+            loadUser={this.loadUser}
+            onRouteChange={this.onRouteChange}
+            backend={this.backend}
+          />
         ) : (
           <Register
             loadUser={this.loadUser}
             onRouteChange={this.onRouteChange}
+            backend={this.backend}
           />
         )}
       </div>

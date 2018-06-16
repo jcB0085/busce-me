@@ -20,7 +20,7 @@ class Register extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:5000/profiles', {
+    fetch(`${this.props.backend}profiles`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
